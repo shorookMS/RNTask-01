@@ -12,6 +12,8 @@ import {
   Icon
 } from "native-base";
 
+import { connect } from "react-redux";
+
 class CoffeeCart extends Component {
   constructor(props) {
     super(props);
@@ -52,7 +54,7 @@ class CoffeeCart extends Component {
   }
 
   render() {
-    const { list } = this.state;
+    const { list } = this.props;
     return (
       <List>
         {list.map((item, index) => this.renderItem(item, index))}
@@ -64,4 +66,15 @@ class CoffeeCart extends Component {
   }
 }
 
-export default CoffeeCart;
+const mapStateToProps = state => ({
+  list: state.cart.list
+});
+
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CoffeeCart);

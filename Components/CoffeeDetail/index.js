@@ -20,6 +20,9 @@ import styles from "./styles";
 // List
 import coffeeshops from "../CoffeeList/list";
 
+import * as actionCreators from "../../store/actions";
+import { connect } from "react-redux";
+
 class CoffeeDetail extends Component {
   constructor(props) {
     super(props);
@@ -96,4 +99,13 @@ class CoffeeDetail extends Component {
   }
 }
 
-export default CoffeeDetail;
+const mapStateToProps = state => ({});
+
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CoffeeDetail);
